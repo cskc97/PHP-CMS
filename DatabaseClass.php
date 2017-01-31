@@ -34,9 +34,15 @@ public function Create_Subject($subjectName,$subjectPosition,$subjectVisibility)
 
 }
 
-public function Create_Page()
+public function Create_Page($subject_id,$menu_name,$position,
+	$visible,$content)
 {
 	//TODO
+
+	$query = "INSERT INTO `pages` (`id`, `subject_id`, `menu_name`, `position`, `visible`, `content`) VALUES (NULL, '$subject_id', '$menu_name', '$position', '$visible', '$content');";
+
+	echo $query;
+	$this->mysqli->query($query);
 }
 
 
@@ -46,6 +52,8 @@ public function Create_Page()
 
 $val = new DatabaseConnection();
 $val->Create_Subject("About Us","1","1");
+
+$val->Create_Page(1,"History",1,1,1,"We are awesome");
 
 
 
