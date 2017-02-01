@@ -23,6 +23,10 @@ define("TABLE_PAGES_VISIBLE","visible");
 define("TABLE_PAGES_CONTENT","content");
 
 
+define("PAGE_ID","pageID");
+define("SUBJECT_ID","subjectID");
+
+
 
 
 

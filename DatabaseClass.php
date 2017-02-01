@@ -28,6 +28,38 @@ public function __destruct()
 
 }
 
+public function getSubject($idVal)
+{
+	$query = "SELECT * FROM ".TABLE_SUBJECTS." WHERE ".
+				TABLE_SUBJECTS_ID."=".$idVal;
+
+	echo $query;
+
+	$resultSet = $this->mysqli->query($query);
+	$assocArray = $resultSet->fetch_assoc();
+
+	$resultSet->free();
+	return $assocArray;
+
+
+}
+
+public function getPage($idVal)
+{
+	$query = "SELECT * FROM ".TABLE_PAGES." WHERE ".
+				TABLE_PAGES_ID."=".$idVal;
+
+	echo $query;
+
+	$resultSet = $this->mysqli->query($query);
+	$assocArray = $resultSet->fetch_assoc();
+
+	$resultSet->free();
+	return $assocArray;
+
+
+}
+
 public function Get_All_Subjects()
 {	
 	/* GOOD PRACTICE:
