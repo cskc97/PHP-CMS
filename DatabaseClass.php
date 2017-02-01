@@ -21,6 +21,31 @@ public function __destruct()
 	$this->mysqli->close();
 }
 
+public function Get_All_Subjects()
+{	
+	/* GOOD PRACTICE:
+	1) Perform database query
+	2) Obtain result set and use it
+	3) FREE the result set
+	*/
+
+	$query = "SELECT * FROM ".TABLE_SUBJECTS.";";
+	$result = $this->mysqli->query($query);
+
+	while($subject = $result->fetch_assoc())
+	{
+		echo $subject[TABLE_SUBJECTS_MENUNAME];
+		echo "<br>";
+	}
+
+	$result->free();
+	
+
+
+
+
+}
+
 public function Create_Subject($subjectName,$subjectPosition,$subjectVisibility)
 {
 	$query = "INSERT INTO ".TABLE_SUBJECTS."(".
