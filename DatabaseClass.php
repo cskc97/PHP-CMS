@@ -19,6 +19,13 @@ public function __destruct()
 {
 
 	$this->mysqli->close();
+
+	echo"<br><br>";
+	echo "--------------------------";
+	echo"<br>";
+
+	echo "DESTRUCTOR CALLED";
+
 }
 
 public function Get_All_Subjects()
@@ -57,7 +64,23 @@ public function Get_All_Subjects()
 
 public function Get_All_Pages()
 {
-	
+	$query = "SELECT * FROM ".TABLE_PAGES.";";
+	$result = $this->mysqli->query($query);
+
+	$assocArray = array();
+
+	while($subject = $result->fetch_assoc())
+	{	
+		array_push($assocArray,$subject);
+		echo $subject[TABLE_PAGES_MENUNAME];
+		echo "<br>";
+	}
+
+
+
+	$result->free();
+
+	return $assocArray;
 }
 
 public function Create_Subject($subjectName,$subjectPosition,$subjectVisibility)
@@ -93,6 +116,14 @@ $val = new DatabaseConnection();
 $val->Create_Subject("About Us","1","1");
 
 $val->Create_Page(1,"History",1,1,1,"We are awesome");
+
+$val->Get_All_Pages();
+
+echo "<br><br>";
+
+$val->Get_All_Subjects();
+
+
 
 
 
