@@ -117,6 +117,8 @@ $val->Create_Subject("About Us","1","1");
 
 $val->Create_Page(1,"History",1,1,1,"We are awesome");
 
+echo "<br><br>";
+
 $val->Get_All_Pages();
 
 echo "<br><br>";
