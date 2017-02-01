@@ -32,18 +32,32 @@ public function Get_All_Subjects()
 	$query = "SELECT * FROM ".TABLE_SUBJECTS.";";
 	$result = $this->mysqli->query($query);
 
+	$assocArray = array();
+
 	while($subject = $result->fetch_assoc())
-	{
+	{	
+		array_push($assocArray,$subject);
 		echo $subject[TABLE_SUBJECTS_MENUNAME];
 		echo "<br>";
 	}
 
+
+
 	$result->free();
+
+	return $assocArray;
+
+
+
+
+
+}
+
+
+
+public function Get_All_Pages()
+{
 	
-
-
-
-
 }
 
 public function Create_Subject($subjectName,$subjectPosition,$subjectVisibility)
