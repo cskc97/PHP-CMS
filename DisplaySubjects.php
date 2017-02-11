@@ -3,7 +3,7 @@
 require_once('DatabaseClass.php');
 
 
-$hyperlink = "localhost/PHP-CMS/DisplayPagesList.php?subID=";
+$hyperlink = "DisplayPagesList.php?subID=";
 
 $database = new DatabaseConnection();
 

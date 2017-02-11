@@ -3,7 +3,7 @@
 require_once("DatabaseClass.php");
 
 
-$hyperlink = "localhost/PHP-CMS/DisplayPage.php?id=";
+$hyperlink = "DisplayPage.php?pageID=";
 
 $subID = $_GET["subID"];
 

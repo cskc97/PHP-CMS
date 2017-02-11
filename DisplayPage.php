@@ -8,6 +8,7 @@ $data = new DatabaseConnection();
 
 $displaypage_id = $_GET[PAGE_ID];
 
+
 $assocArray = $data->getPage($displaypage_id);
 
 echo $assocArray["menu_name"];
