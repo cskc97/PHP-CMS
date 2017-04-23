@@ -10,6 +10,4 @@ Content Management System in PHP:
 
 4) Includes security against SQL Injections, etc.
 
-# STILL UNDER DEVELOPMENT
-
-
+### NOTE: For a more extensive CMS look at WidgetCorp. 
